@@ -1,6 +1,11 @@
+import { TextField } from "@mui/material"
+
 function Login (){
   return (
-    <div>Login</div>
+    <>
+      <h1>Login</h1>
+      <TextField id="email" label="Email" type="email" variant="outlined"></TextField>
+    </>
   )
 }
 

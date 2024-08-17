@@ -1,6 +1,6 @@
 function Historiaclinica() {
   return (
-    <div>Historia clinica</div>
+    <div>Modulo de Historias Clinicas del Paciente</div>
   )
 }
 

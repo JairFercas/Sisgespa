@@ -6,6 +6,7 @@ import GroupsSharpIcon from '@mui/icons-material/GroupsSharp';
 import HomeSharpIcon from '@mui/icons-material/HomeSharp';
 import AssignmentSharpIcon from '@mui/icons-material/AssignmentSharp';
 import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
+import { NavLink } from "react-router-dom";
 
 function Navlistdrawer() {
   return (
@@ -24,7 +25,7 @@ function Navlistdrawer() {
         <nav>
             <List>
                 <ListItem disablePadding>
-                    <ListItemButton component="a" href="/Home">
+                    <ListItemButton component={NavLink} to="/Home">
                         <ListItemIcon>
                             <HomeSharpIcon/>
                         </ListItemIcon>
@@ -33,7 +34,7 @@ function Navlistdrawer() {
                 </ListItem>
 
                 <ListItem disablePadding>
-                    <ListItemButton component="a" href="/Pacientes">
+                    <ListItemButton component={NavLink} to="/Pacientes">
                         <ListItemIcon>
                             <GroupsSharpIcon/>
                         </ListItemIcon>
@@ -42,7 +43,7 @@ function Navlistdrawer() {
                 </ListItem>
 
                 <ListItem disablePadding>
-                    <ListItemButton component="a" href="/HistoriaClinica">
+                    <ListItemButton component={NavLink} to="/HistoriaClinica">
                         <ListItemIcon>
                             <CreateNewFolderSharpIcon/>
                         </ListItemIcon>
@@ -51,7 +52,7 @@ function Navlistdrawer() {
                 </ListItem>
 
                 <ListItem disablePadding>
-                    <ListItemButton component="a" href="#historiadiaria">
+                    <ListItemButton component={NavLink} to="/buscarhd">
                         <ListItemIcon>
                             <DifferenceSharpIcon/>
                         </ListItemIcon>
@@ -60,7 +61,7 @@ function Navlistdrawer() {
                 </ListItem>
 
                 <ListItem disablePadding>
-                    <ListItemButton component="a" href="/Datosmaestros">
+                    <ListItemButton component={NavLink} to="/Datosmaestros">
                         <ListItemIcon>
                             <AssignmentSharpIcon/>
                         </ListItemIcon>

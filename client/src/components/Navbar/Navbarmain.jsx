@@ -4,6 +4,7 @@ import Navlistdrawer from "./Navlistdrawer"
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
 import HomeSharpIcon from '@mui/icons-material/HomeSharp';
+import { NavLink } from "react-router-dom";
 
 
 function Navbarmain() {
@@ -20,7 +21,7 @@ function Navbarmain() {
                     <Typography variant="h5">Menu</Typography>
                 </IconButton>
                 <Typography variant="h5" sx={{flexGrow:1}}></Typography>
-                <IconButton color="inherit" size = "small" component="a" href="/Home">
+                <IconButton color="inherit" size = "small" component={NavLink} to="/Home">
                     <HomeSharpIcon/>
                     <Typography variant="h5">Home</Typography>
                 </IconButton>
