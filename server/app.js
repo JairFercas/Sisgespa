@@ -27,3 +27,27 @@ app.get('/', (req,res)=>{
         return res.json(data);
     })
 })
+
+app.post('/create', (req,res)=>{
+    const sql="INSERT INTO tb_paciente(`NombresPx`,`ApePatPx`,`ApeMatPx`,`TipoDoc`,`NumDoc`,`Direccion`,`NumCelular`,`CorreoPac`,`Nacionalidad`,`FechaNacimiento`,`Genero`,`Idioma`,`ContactoE_nombre`,`ContactoE_celular`) VALUES (?)";
+    const values = [
+        req.body.NombresPx,
+        req.body.ApePatPx,
+        req.body.ApeMatPx,
+        req.body.TipoDoc,
+        req.body.NumDoc,
+        req.body.Direccion,
+        req.body.NumCelular,
+        req.body.CorreoPac,
+        req.body.Nacionalidad,
+        req.body.FechaNacimiento,
+        req.body.Genero,
+        req.body.Idioma,
+        req.body.ContactoE_nombre,
+        req.body.ContactoE_celular,
+    ]
+    db.query(sql, (err,data)=>{
+        if(err) return res.json();
+        return res.json("created");
+    })
+})

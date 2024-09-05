@@ -10,6 +10,7 @@ function MostrarPacientes() {
         axios.get('http://localhost:8080/')
         .then(res => setData(res.data))
         .catch(err=> console.log(err));
+        console.log(data)
     })
   return (
     <div className="d-flex justify-content-center align-items-center bg-dark vh-100">
