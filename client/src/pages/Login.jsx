@@ -1,11 +1,17 @@
-import { TextField } from "@mui/material"
+import { Box, Button, TextField } from "@mui/material"
+import AssignmentIndSharpIcon from '@mui/icons-material/AssignmentIndSharp';
+import { NavLink } from "react-router-dom";
 
 function Login (){
   return (
-    <>
-      <h1>Login</h1>
-      <TextField id="email" label="Email" type="email" variant="outlined"></TextField>
-    </>
+    <Box>
+      <h1>Bienvenido a Sisgespa</h1>
+      <TextField id="email" label="Correo" type="email" variant="outlined"/>
+      <TextField id="password" label="Contraseña" type="password" variant="outlined"/>
+      <Button variant="contained" color="success" endIcon={<AssignmentIndSharpIcon/>} component={NavLink} to="/Home"> 
+        Ingresar
+      </Button>
+    </Box>
   )
 }
 

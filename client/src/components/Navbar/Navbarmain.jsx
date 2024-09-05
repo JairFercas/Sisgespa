@@ -21,9 +21,9 @@ function Navbarmain() {
                     <Typography variant="h5">Menu</Typography>
                 </IconButton>
                 <Typography variant="h5" sx={{flexGrow:1}}></Typography>
-                <IconButton color="inherit" size = "small" component={NavLink} to="/Home">
+                <IconButton color="inherit" size = "small" component={NavLink} to="/mostrarpacientes">
                     <HomeSharpIcon/>
-                    <Typography variant="h5">Home</Typography>
+                    <Typography variant="h5">Clientes</Typography>
                 </IconButton>
                 <IconButton color="inherit" size = "small" component="a" href="/Login">
                     <LogoutSharpIcon/>

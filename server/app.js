@@ -1,41 +1,29 @@
 //este modulo ejecuta todo el servidor y lo inicializa
 const express = require('express')
-const path = require('path')
-const morgan = require('morgan')
 const mysql = require('mysql');
-const myConnection = require('express-myconnection')
-
+const cors = require('cors');
+const port = 8080;
 const app = express()
 
-//importing Routes
-const pacienteRoutes = require('./routes/paciente')
-
-//setting
-app.set('port', process.env.PORT || 3000)
-app.set('view engine', 'ejs')
-app.set('views',path.join(__dirname, 'views'))
-
+app.use(cors());
+app.use(express.json());
 
 //middlewares - funciones
-app.use(morgan('dev'))
-app.use(myConnection(mysql,{
+const db=mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
     database: 'bd_sanisidro',
     port: '3306'
-}, 'single'))
-app.use(express.urlencoded({extended:false}))
+})
+app.listen(port,()=>{
+    console.log(`Servidor escuchando en el puerto ${port}`)
+})
 
-
-//routes
-app.use('/', pacienteRoutes)
-
-//static files
-app.use(express.static(path.join(__dirname, 'public')))
-
-
-//starting the server
-app.listen(app.get('port'), ()=> {
-    console.log('Server on port 3000')
+app.get('/', (req,res)=>{
+    const sql="SELECT * FROM tb_paciente";
+    db.query(sql, (err,data)=>{
+        if(err) return res.json();
+        return res.json(data);
+    })
 })

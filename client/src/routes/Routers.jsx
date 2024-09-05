@@ -9,6 +9,7 @@ import Historiaclinica from '../pages/Historiaclinica'
 import Buscarhd from '../pages/Historias/Buscarhd'
 import Crearhd from '../pages/Historias/Crearhd'
 import Buscarpaciente from '../pages/Paciente/Buscarpaciente'
+import MostrarPacientes from '../pages/Paciente/MostrarPacientes'
 
 function Routers() {
   return <Routes>
@@ -16,6 +17,7 @@ function Routers() {
   <Route path="/home" element={<Home/>}/>
   <Route path="/login" element={<Login/>}/>
   <Route path="/pacientes" element={<Pacientes/>}/>
+  <Route path="/mostrarpacientes" element={<MostrarPacientes/>}/>
   <Route path="/buscarpaciente" element={<Buscarpaciente/>}/>
   <Route path="/datosmaestros" element={<Datosmaestros/>}/>
   <Route path="/registro" element={<Signup/>}/>
@@ -28,3 +30,5 @@ function Routers() {
 }
 
 export default Routers
+
+//<Route path="/pacientes" element={<Pacientes/>}/>

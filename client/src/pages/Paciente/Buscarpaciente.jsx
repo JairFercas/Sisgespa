@@ -1,6 +1,11 @@
+import { Box, Typography } from "@mui/material"
+
 function Buscarpaciente() {
   return (
-    <div>Buscarpaciente</div>
+    <Box>
+        <Typography variant="h5" label="Busqueda de paciente"/>
+    </Box>
+    
   )
 }
 
